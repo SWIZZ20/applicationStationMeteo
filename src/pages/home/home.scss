@@ -1,3 +1,45 @@
 page-home {
+    .temperature{
+        margin-left: 23%;
+        font-size: 4em;
+        color: white;
+    }
 
+    .card-md {
+        margin: 10px;
+        border-radius: 2px;
+        width: calc(100% - 20px);
+        font-size: 1.4rem;
+        opacity: 0.9;
+        background: #fff;
+    }
+
+    .ionicon {
+        display: inline-block;
+        font-size: 2.6em;
+    }
+
+    .ionicon2 {
+        display: inline-block;
+        font-size: 2.2em;
+        margin-right: 10px;
+    }
+
+    .item-md p {
+        overflow: inherit;
+        font-size: 1.4rem;
+        line-height: normal;
+        text-overflow: inherit;
+        color: black;
+        font-weight: bold;
+    }
+
+    .heure {
+        margin: 0 0 2px;
+        font-size: 1.4rem;
+        font-weight: normal;
+        line-height: 1.5;
+        color: #222;
+        font-weight: bold;
+    }
 }

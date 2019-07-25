@@ -1,14 +1,71 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Ionic Blank
+      Meteo
     </ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+<ion-content style="background-image: url('../../assets/imgs/background.jpeg')">
+
+  <p style="margin-left: 35%; font-size: 2.4em;color: white"><ion-icon name="cloud"></ion-icon> {{dataTable.Temperature}}°C</p>
+  <p text-center *ngIf="12>hour" style="font-size: 2.4em;color: white">{{hour}}:{{minute}} AM</p>
+  <p text-center *ngIf="hour>12" style="font-size: 2.4em;color: white">{{hour}}:{{minute}} PM</p>
+  <ion-card style="height: 100px;border-radius:20px;background-color: #dae7ff;">
+    <ion-card-content>
+      <ion-row style="margin-top: 10px;">
+        <ion-col text-center> <ion-icon name="water" color="primary"></ion-icon><p>Humidité<br/>{{dataTable.Humidity}}%</p></ion-col>
+        <ion-col text-center>
+          <ion-icon *ngIf="dataTable.Ensoleillement==='Ensoleillé'" name="sunny" style="color:orange; font-size: 2.6em"></ion-icon>
+          <ion-icon *ngIf="dataTable.Ensoleillement==='Nuit'" name="moon" style="color:lightslategray; font-size: 2.6em"></ion-icon>
+          <ion-icon *ngIf="dataTable.Ensoleillement==='Nuageux'" name="partly-sunny" style="color:yellow; font-size: 2.6em"></ion-icon>
+          <p text-center style=" font-size: 1.5em;color: white;">{{dataTable.Ensoleillement}}</p>
+        </ion-col>
+      </ion-row>
+    </ion-card-content>
+  </ion-card>
+  <p style="margin-left: 30px; font-weight: bolder;">Details</p>
+  <ion-card style="height: 200px; border-radius:20px; background-color: #dae7ff;">
+    <ion-list style="background-color: #dae7ff;">
+      <ion-item style="background-color: #dae7ff;">
+        <div ion-item style="background-color: #dae7ff;">
+          <p item-start><ion-icon name="water" class="ionicon2" color="primary"></ion-icon> Humidité de l'air</p>
+          <p item-end>{{dataTable.Humidity}}%</p>
+        </div>
+        <div ion-item style="background-color: #dae7ff;">
+          <p item-start><ion-icon name="thermometer" class="ionicon2"></ion-icon> Température de l'air</p>
+          <p item-end>{{dataTable.Temperature}}°C</p>
+        </div>
+        <div ion-item style="background-color: #dae7ff;">
+          <p item-start><ion-icon name="flower" class="ionicon2" color="secondary"></ion-icon>  Humidité du sol</p>
+          <p item-end>{{dataTable.HumiditeSol}}%</p>
+        </div>
+        <div ion-item style="background-color: #dae7ff;">
+          <p item-start><ion-icon name="rainy" class="ionicon2" color="light"></ion-icon> Précipitation</p>
+          <p item-end>{{dataTable.Rainning}}</p>
+        </div>
+      </ion-item>
+    </ion-list>
+  </ion-card>
+  <p style="margin-left: 30px;font-weight: bold;">Horaires</p>
+  <ion-card style="height: 200px; border-radius:20px;background-color: #dae7ff;">
+    <ion-card-content>
+      <ion-row style="margin-top: 30px;">
+        <ion-col text-center><p class="heure">10:00</p></ion-col>
+        <ion-col text-center><p class="heure">12:00</p></ion-col>
+        <ion-col text-center><p class="heure">14:00</p></ion-col>
+        <ion-col text-center><p class="heure">18:00</p></ion-col>
+        <ion-col text-center><p class="heure">20:00</p></ion-col>
+      </ion-row>
+      <ion-row style="margin-top: 5px;">
+        <ion-col text-center><ion-icon name="cloud" color="light" class="ionicon"></ion-icon><br/>27°C</ion-col>
+        <ion-col text-center><ion-icon name="cloud" color="light" class="ionicon"></ion-icon><br/>33°C</ion-col>
+        <ion-col text-center><ion-icon name="cloud" color="light" class="ionicon"></ion-icon><br/>37°C</ion-col>
+        <ion-col text-center><ion-icon name="cloud" color="light" class="ionicon"></ion-icon><br/>38°C</ion-col>
+        <ion-col text-center><ion-icon name="cloud" color="light" class="ionicon"></ion-icon><br/>33°C</ion-col>
+      </ion-row>
+    </ion-card-content>
+  </ion-card>
+  
+  
 </ion-content>
