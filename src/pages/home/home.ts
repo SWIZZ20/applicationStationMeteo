@@ -28,12 +28,16 @@ export class HomePage {
       console.log(snapShot.val());
       this.dataTable=snapShot.val();
     }).catch((err)=>{
-      console.log(err);
+      
     })
   }
 
   maFunction(){
     console.log('setTimeOut');
+  }
+
+  fucntionMap(){
+
   }
 
 }
